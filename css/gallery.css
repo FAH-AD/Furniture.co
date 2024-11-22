@@ -1,0 +1,38 @@
+.follow-section{
+    padding: 20px 40px;
+    margin-bottom: 10px;
+}
+.gallery{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+}
+.gallery-image{
+    max-width: 385px;
+}
+.social-icons{
+    display: flex;
+    gap: 1rem;
+}
+@media (max-width: 768px) {
+    .gallery{
+        display: flex;
+       flex-direction: column;
+    
+    }
+    .gallery-image{
+        max-width: 300px;
+    }
+    .middle-section{
+        display: none;
+    }
+    .follow-section{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

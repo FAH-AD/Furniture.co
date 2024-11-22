@@ -1,0 +1,45 @@
+
+.style-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 20px 40px;
+}
+
+.style-container h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.style-grid {
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.style-grid img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .style-container{
+        padding: 10px;
+        width: 100%;
+    }
+   
+       
+    .style-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .discover-image{
+        max-width: 120px;
+    }
+
+    
+}

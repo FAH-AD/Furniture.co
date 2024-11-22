@@ -1,0 +1,74 @@
+/* Newsletter Section Styles */
+.newsletter-section {
+    
+    background-color: #004458; /* Match the dark teal background */
+    text-align: center;
+    padding: 20px;
+    color: #fff; /* White text */
+  }
+  
+  .newsletter-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .newsletter-section .icon-couch {
+    width: 40px;
+    height: 40px;
+    fill: #1BCFC9; /* Match the couch color in the image */
+    vertical-align: middle;
+    margin: 0 5px;
+  }
+  
+  .newsletter-section p {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .newsletter-form input {
+    width: 300px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    margin-right: 10px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .newsletter-form input::placeholder {
+    color: #7EBEC5; /* Placeholder color */
+  }
+  
+  .newsletter-form button {
+    padding: 10px 20px;
+    background-color: #1BCFC9; /* Match button color */
+    border: none;
+    border-radius: 25px;
+    color: #004458; /* Dark teal text for contrast */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #17B1A8;
+  }
+  
+  .disclaimer {
+    margin-top: 15px;
+    font-size: 0.8rem !important;
+    color: #7EBEC5; /* Match lighter text color */
+  }
+  @media (max-width: 768px) {
+    .newsletter-section {
+        width: 100%;}
+  }
+
+  

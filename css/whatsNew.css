@@ -1,0 +1,140 @@
+.whats-new-container {
+    padding: 20px 40px;
+    
+
+  }
+  
+
+  .whats-new-card {
+    /* flex: 1 1 calc(33.33% - 16px); */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+  }
+  .new-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .new-heading {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .upper-layer{
+    display: flex;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .lower-layer{
+    display: flex;
+    margin-bottom: 40px;
+    overflow-x: auto;
+    scrollbar-width: 0;
+    gap: 1rem;
+  }
+  .cards-layer::-webkit-scrollbar {
+    display: none;
+  }
+   
+  
+  .btn{
+    border-radius: 999px;
+    font-weight: 600;
+    border: none;
+    font-size: 14px;
+    background-color: rgba(238, 238, 238, 1);
+    padding: 12px 20px;
+    height: 40px;
+  }
+  .whats-new-card .content {
+    padding: 10px;
+    text-decoration: none;
+  }
+  .text{
+    margin: 0;
+    color: black !important;
+  }
+  .link{
+    text-decoration: none !important;
+  }
+  .image-size{
+    width: 280px;
+    height: 312px;
+  }
+  .whats-new-card .content .label {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(112, 112, 112, 1);
+    margin-bottom: 8px;
+    text-decoration: none !important;
+  }
+ 
+  .whats-new-card .content p {
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+  }
+  .first-layer{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 400px;
+    gap: 2rem;
+  }
+  .second-layer{
+    display: flex;
+    flex-grow: 1;
+    gap: 1rem;
+
+  }
+  .third-layer{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+    
+    width: calc(50% - 7px)
+  }
+  .fourth-layer{
+    display: flex;
+    
+  }
+  .upper-layer-phone{
+    display: none;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  .discover-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .whats-new-container {
+        padding: 20px ;
+    
+      }
+    .upper-layer{
+        display: none
+    }
+    .upper-layer-phone{
+        display: flex;
+        margin: auto;
+        margin-bottom: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    .new-heading {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      .btn{
+        font-size: 12px;
+        padding: 8px 20px;
+      }
+  }

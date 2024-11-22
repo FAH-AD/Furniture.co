@@ -1,0 +1,52 @@
+/* Brands Section Styles */
+.brands-section {
+    
+    text-align: center;
+    padding: 70px 20px;
+    background-color: #00807A; /* Match the teal background from the image */
+    color: white;
+    margin-top: 20px;
+  }
+  
+  .brands-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: white;
+    margin-top: 15px;
+  }
+  
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns in larger screens */
+    gap: 15px;
+    justify-items: center; /* Center logos in their cells */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .brands-grid img {
+    max-width: 100px; /* Adjust for consistent size */
+    height: auto;
+    filter: brightness(0) invert(1); /* Ensure white logo appearance */
+    transition: transform 0.3s ease;
+  }
+  
+  .brands-grid img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  /* Responsive Design for Mobile View */
+  @media (max-width: 768px) {
+    .brands-grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 columns on mobile */
+    }
+    .brands-section {
+        width: 100%;}
+    .brands-grid img {
+        max-width: 70px; /* Adjust for consistent size */
+       
+      }
+      
+  }
+  
