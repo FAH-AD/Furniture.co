@@ -1,0 +1,165 @@
+/* General Layout */
+#shop-section {
+    position: relative;
+   
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  .shops-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  .shop-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px ;
+  }
+  .shop-heading{
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .shops-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scroll-controls {
+    display: flex;
+    
+    margin: 10px 0;
+  }
+  
+  .image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .scroll-btn {
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    margin: 0 4px;
+    background: black;
+    border: none;
+    border-radius:990px;
+  }
+  
+  .scroll-indicator-s {
+    width: 100%;
+    height: 5px;
+    background: #f0f0f0;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 25px;
+  }
+  
+  #indicator-line-s{
+    height: 100%;
+    width: 30px;
+    background: #333;
+    border-radius: 5px;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Card Styles */
+  .shop-card {
+    min-width: 300px;
+    width: 200px;
+    height: 400px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shop-card img  {
+ 
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+  
+  .shop-card .content {
+    padding: 15px;
+  }
+  
+  .shop-card .content h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .shop-card .content p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .shop-card .price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .shop-card .price .old-price {
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  .color-options {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .color-options span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  
+  .color-options span:hover {
+    border-color: #333;
+  }
+  .image-container{
+    height: 200px;
+  }
+  
+  .hover-image {
+  
+    height: 90%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+  .default-image{
+    
+    height: 90%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+  .brand-image{
+    width: 20px;
+    height: 20px;
+    border-radius: 889px;
+  }
+  .brand{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+  }
+  .content p{
+    margin: 15px 0px ;
+  }
+  

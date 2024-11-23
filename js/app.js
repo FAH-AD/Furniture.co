@@ -16,6 +16,28 @@ $(document).ready(function () {
     }).appendTo("head");
   });
 
+  $(document).ready(function () {
+    const $headerTop = $('.header-top');
+    const $links = $('.header-links');
+    let currentIndex = 0;
+    const totalLinks = $links.length;
+  
+    // Function to show the current link
+    function showLink(index) {
+      const translateX = -index * 100;
+      $headerTop.css({
+        transform: `translateX(${translateX}%)`,
+        transition: 'transform 0.5s ease-in-out',
+      });
+    }
+  
+    // Auto-slide every 3 seconds
+    setInterval(function () {
+      currentIndex = (currentIndex + 1) % totalLinks;
+      showLink(currentIndex);
+    }, 3000);
+  });
+  
 
   // Navbar Section
 
@@ -226,4 +248,199 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#footer-container").load("components/footer.html");
+});
+
+
+// code for shop new brands section
+
+$(document).ready(function () {
+  // Load the shops section
+  $("#shop-section").load("components/shop.html", function () {
+    const scrollContent = $("#shops-content");
+    const indicatorLine = $("#indicator-line-s");
+
+    // Update scroll indicator
+    function updateIndicatorLine() {
+      const contentWidth = scrollContent[0].scrollWidth;
+      const visibleWidth = scrollContent[0].clientWidth;
+      const scrollLeft = scrollContent.scrollLeft();
+      const movementRatio = scrollLeft / (contentWidth - visibleWidth);
+      const indicatorMaxOffset = $(".scroll-indicator-s").width() - indicatorLine.width();
+      const newOffset = Math.min(Math.max(0, movementRatio * indicatorMaxOffset), indicatorMaxOffset);
+      indicatorLine.css("transform", `translateX(${newOffset}px)`);
+    }
+
+    scrollContent.on("scroll", updateIndicatorLine);
+
+    // Scroll Buttons
+    $("#scroll-left-s").click(function () {
+      scrollContent.animate({ scrollLeft: "-=300" }, 300, updateIndicatorLine);
+    });
+
+    $("#scroll-right-s").click(function () {
+      scrollContent.animate({ scrollLeft: "+=300" }, 300, updateIndicatorLine);
+    });
+
+    updateIndicatorLine();
+
+    // Shop Cards Data
+    const shopCardsData = [
+      {
+        brand: "One Kings Lane",
+        brandImage:"../assets/kinglane.jpg",
+        title: "Margot Grey Turkish Knot Rug",
+        availble:"Available to be shipped",
+        price: "$3,149.00",
+        oldPrice: "",
+        imageDefault: "../assets/shop/sh1_1.jpg",
+        imageHover: "../assets/shop/sh1_2.jpg",
+        colors: [
+         
+        ],
+      },
+      {
+        brand: "One Kings Lane",
+        
+        brandImage:"../assets/kinglane.jpg",
+        title: "Marth Stewart Logan Chair - Lily Pond Linen...",
+        price: "$3,149.98",
+        oldPrice: "$4,500.00",
+        imageDefault: "../assets/shop/sh2_1.jpg",
+        imageHover: "../assets/shop/sh2_2.jpg",
+        availble:"Available to be shipped",
+        colors: [
+        
+          { color: "#7E7666", image: "../assets/shop/sh2_1.jpg" },
+          { color: "#ABBEBF", image: "../assets/shop/sh2-5.jpg" },
+          { color: "#E9DDCA", image: "../assets/shop/sh2_4.jpg" },
+          { color: "#CF1020", image: "../assets/shop/sh2-3.jpg" },
+        ],
+      },
+      {
+        brand: "One Kings Lane",
+        brandImage:"../assets/kinglane.jpg",
+        title: "Leyla Floral Pillow - Olive",
+        price: "$3,149.98",
+        oldPrice: "$4,500.00",
+        imageDefault: "../assets/shop/sh3_1.jpg",
+        imageHover: "../assets/shop/sh3_2.jpg",
+        availble:"Available to be shipped",
+        colors: [
+          
+        ],
+      },
+      {
+        brand: "One Kings Lane",
+        brandImage:"../assets/kinglane.jpg",
+        title: "Hugo Oak Bed - Walnut - Tulsi Home - Brown",
+        price: "$1719.98",
+        oldPrice: "$2650.00",
+        imageDefault: "../assets/shop/sh4_1.jpg",
+        imageHover: "../assets/shop/sh4_2.jpg",
+        availble:"Available to be shipped",
+        colors: [
+          
+        ],
+      },
+      {
+        brand: "One Kings Lane",
+        brandImage:"../assets/kinglane.jpg",
+        title: "Sukie 1-Drawer Nightstand - Navy",
+        price: "$3,149.98",
+        oldPrice: "$4,500.00",
+        imageDefault: "../assets/shop/sh5_1.jpg",
+        imageHover: "../assets/shop/sh5_2.jpg",
+        availble:"Available to be shipped",
+        colors: [
+         
+        ],
+      },
+      {
+        brand: "One Kings Lane",
+        brandImage:"../assets/kinglane.jpg",
+
+        title: "Hourglass Side Table",
+        price: "$242.10",
+        oldPrice: "$269.00",
+        imageDefault: "../assets/shop/sh7_1.jpg",
+        imageHover: "../assets/shop/sh7_2.jpg",
+        availble:"Available to be shipped",
+        colors: [
+          
+        ],
+      },
+      {
+        brand: "One Kings Lane",
+        brandImage:"../assets/kinglane.jpg",
+
+        title: "Promenade Chair in Ivory Boucle",
+        price: "$242.10",
+        oldPrice: "$269.00",
+        imageDefault: "../assets/shop/sh8_1.jpg",
+        imageHover: "../assets/shop/sh8_2.jpg",
+        availble:"Available to be shipped",
+        colors: [
+          
+        ],
+      },
+    ];
+    
+
+    // Render Cards
+    shopCardsData.forEach((data) => {
+      const colorOptions = data.colors
+        .map(
+          (color) =>
+            `<span class="color-option" style="background:${color.color}" data-image="${color.image}"></span>`
+        )
+        .join("");
+    
+      const cardHtml = `
+        <div class="shop-card">
+          <div class="image-container">
+            <img src="${data.imageDefault}" class="default-image"  alt="${data.title}">
+            <img src="${data.imageHover}" class="hover-image" style="display:none" alt="${data.title}">
+          </div>
+          <div class="content">
+
+            <span class="brand"><img src="${data.brandImage}" class="brand-image"  alt="${data.title}"> <span> ${data.brand}</span></span>
+            <p>${data.title}</p>
+            <div class="price">
+              <span>${data.price}</span>
+              <span class="old-price">${data.oldPrice}</span>
+            </div>
+            <div class="color-options">
+              ${colorOptions}
+            </div>
+             <p>${data.availble}</p>
+          </div>
+        </div>
+      `;
+    
+      $("#shops-content").append(cardHtml);
+    });
+    
+    // Add Hover Effects
+    $(".shop-card .image-container").hover(
+      function () {
+        $(this).find(".default-image").css("display", "none");
+        $(this).find(".hover-image").css("display", "block");
+      },
+      function () {
+        $(this).find(".default-image").css("display", "block");
+        $(this).find(".hover-image").css("display", "none");
+      }
+    );
+    
+
+    // Handle Color Selection
+    $(".color-options span").click(function () {
+      const selectedImage = $(this).data("image"); // Get the image URL associated with the color
+      const card = $(this).closest(".shop-card"); // Get the closest card
+      card.find(".default-image").attr("src", selectedImage); // Update the default image with the new image
+    });
+    
+
+    updateIndicatorLine();
+  });
 });
