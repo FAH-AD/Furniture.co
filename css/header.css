@@ -123,7 +123,6 @@ body {
   .header-top {
     flex-direction: row;
     overflow: hidden;
-    position: relative;
     gap: 0; /* No gaps in carousel */
     width: 100%;
   }

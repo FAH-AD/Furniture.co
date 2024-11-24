@@ -1,77 +1,74 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/navbar.css">
 </head>
-  <nav class="navbar">
-    <ul class="nav-menu">
-      <li class="nav-item">
-        <a href="#">Deal Finder</a>
-      </li>
-      <li class="nav-item">
-        <a href="#">Furniture</a>
-      </li>
-      <li class="nav-item">
-        <a href="#">Living</a>
-      </li>
-      <li class="nav-item">
-        <a href="#">Bedroom</a>
-        <!-- Dropdown -->
-        <!-- <div class="dropdown-menu">
-          <div class="dropdown-left">
-            <ul>
-              <li>Bedroom Furniture Sets</li>
-              <li>Beds & Headboards</li>
-              <li>Bedroom Storage</li>
-              <li>Mattresses & Foundations</li>
-              <li>Bedding</li>
-              <li>Lighting</li>
-              <li>Rugs</li>
-              <li>Decor</li>
-            </ul>
-          </div>
-          <div class="dropdown-right">
-            <div class="right-item">All Bedroom Furniture Sets</div>
-            <div class="right-item">King Size Furniture Sets</div>
-            <div class="right-item">Queen Size Furniture Sets</div>
-            <div class="right-item">Full Size Furniture Sets</div>
-            <div class="right-item">Twin Size Furniture Sets</div>
-            <div class="right-item">California King Size Furniture Sets</div>
-          </div>
-          <div class="dropdown-guide">
-            <h3>Bedroom Guide</h3>
-            <p>Rest & relax in a room perfectly curated for you.</p>
-            <a href="#">Learn more →</a>
-          </div>
-        </div> -->
-      </li>
-      <li class="nav-item">
-        <a href="#">Mattresses</a>
-      </li>
-      <li class="nav-item">
-        <a href="#">Dining</a>
-      </li>
-      <li class="nav-item">
-        <a href="#">Home Office</a>
-      </li>
-      <li class="nav-item">
-        <a href="#">Outdoor</a>
-      </li>
-      <li class="nav-item">
-        <a href="#">Rugs & Decor</a>
-      </li>
-      <li class="nav-item black-friday">
-        <a href="#">Black Friday Sale</a>
-      </li>
-      <li class="nav-item">
-        <a href="#">Holidays</a>
-      </li>
-      <li class="nav-item">
-        <a href="#">Inspiration</a>
-      </li>
-    </ul>
-  </nav>
+
+<body>
+  <!-- Navbar -->
+   <div>
 
  
+  <nav class="navbar">
+    <ul class="nav-menu">
+      <li class="nav-item" data-menu="deal-finder">
+        <a href="#">Deal Finder</a>
+        <div class="dropdown-section"></div>
+      </li>
+      <li class="nav-item" data-menu="furniture">
+        <a href="#">Furniture</a>
+        <div class="dropdown-section"></div>
+      </li>
+      <li class="nav-item" data-menu="mattresses">
+        <a href="#">Mattresses</a>
+        <div class="dropdown-section"></div>
+      </li>
+      <li class="nav-item" data-menu="dining">
+        <a href="#">Dining</a>
+        <div class="dropdown-section"></div>
+      </li>
+      <li class="nav-item" data-menu="homeoffice">
+        <a href="#">Home Office</a>
+        <div class="dropdown-section"></div>
+      </li>
+      <li class="nav-item" data-menu="outdoor">
+        <a href="#">Outdoor</a>
+        <div class="dropdown-section"></div>
+      </li>
+      <li class="nav-item" data-menu="rugs">
+        <a href="#">Rugs & Decor</a>
+        <div class="dropdown-section"></div>
+      </li>
+      <li class="nav-item" data-menu="baby">
+        <a href="#">Baby & Kids</a>
+        <div class="dropdown-section"></div>
+      </li>
+      <li class="nav-item" data-menu="friday">
+        <a href="#">Black Friday Sale</a>
+        <div class="dropdown-section"></div>
+      </li>
+      <li class="nav-item" data-menu="holidays">
+        <a href="#">Holidays</a>
+        <div class="dropdown-section"></div>
+      </li>
+      <li class="nav-item" data-menu="inspiration">
+        <a href="#">Inspiration</a>
+        <!-- <div class="dropdown-section"></div> -->
+      </li>
+    </ul>
+   
+  </nav>
+  <div class="dropdown-container">
+    <div class="dropdown-content">
+      <div class="left-menu"></div>
+      <div class="middle-content"></div>
+      <div class="right-content"></div>
+    </div>
+  </div>
+</div>
+  <!-- Include jQuery Script -->
+  <script src="../js/navbar.js"></script>
+</body>
+
+</html>

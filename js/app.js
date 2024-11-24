@@ -14,29 +14,30 @@ $(document).ready(function () {
       type: "text/css",
       href: "css/header.css"
     }).appendTo("head");
-  });
+  
 
-  $(document).ready(function () {
-    const $headerTop = $('.header-top');
-    const $links = $('.header-links');
-    let currentIndex = 0;
-    const totalLinks = $links.length;
+  // $(document).ready(function () {
+  //   const $headerTop = $('.header-top');
+  //   const $links = $('.header-link');
+  //   let currentIndex = 0;
+  //   const totalLinks = $links.length;
   
-    // Function to show the current link
-    function showLink(index) {
-      const translateX = -index * 100;
-      $headerTop.css({
-        transform: `translateX(${translateX}%)`,
-        transition: 'transform 0.5s ease-in-out',
-      });
-    }
+  //   // Function to show the current link
+  //   function showLink(index) {
+  //     const translateX = -index * 100;
+  //     $headerTop.css({
+  //       transform: `translateX(${translateX}%)`,
+  //       transition: 'transform 0.5s ease-in-out',
+  //     });
+  //   }
   
-    // Auto-slide every 3 seconds
-    setInterval(function () {
-      currentIndex = (currentIndex + 1) % totalLinks;
-      showLink(currentIndex);
-    }, 3000);
-  });
+  //   // Auto-slide every 3 seconds
+  //   setInterval(function () {
+  //     currentIndex = (currentIndex + 1) % totalLinks;
+  //     showLink(currentIndex);
+  //   }, 3000);
+  // });
+})
   
 
   // Navbar Section
@@ -45,19 +46,53 @@ $(document).ready(function () {
     $("#navbar-container").load("components/navbar.html");
   });
 
-  // (document).ready(function () {
-  //   $(".nav-item").hover(
-  //     function () {
-  //       // Show dropdown menu when mouse enters
-  //       $(this).find(".dropdown-menu").stop(true, true).fadeIn(200);
-  //     },
-  //     function () {
-  //       // Hide dropdown menu when mouse leaves
-  //       $(this).find(".dropdown-menu").stop(true, true).fadeOut(200);
-  //     }
-  //   );
-  // });
   
+// navbar phone section
+$(document).ready(function () {
+  // Load the navbar dynamically
+  $('#navbar-placeholder').load('components/navbarphone.html', function () {
+    console.log('Navbar loaded successfully!');
+  });
+
+  // Open the fullscreen menu when the hamburger icon is clicked
+  $(document).on('click', '.menu-icon', function () {
+    $('#fullscreen-menu').addClass('active');
+    $('#menu-screen').addClass('active');
+  });
+
+  // Close the fullscreen menu when the close button is clicked
+  $(document).on('click', '.close-button', function () {
+    $('#fullscreen-menu').removeClass('active');
+    $('#menu-screen, #content-screen').removeClass('active');
+  });
+
+  // Navigate to the content screen when a menu item is clicked
+  $(document).on('click', '#menu-screen li', function () {
+    const contentType = $(this).data('content');
+    const title = $(this).text();
+
+    // Update content screen with relevant data
+    $('#content-title').text(title);
+    $('#content-area').html(`
+      <p>Shop By Style</p>
+      <ul>
+        <li>${contentType} Option 1</li>
+        <li>${contentType} Option 2</li>
+        <li>${contentType} Option 3</li>
+      </ul>
+    `);
+
+    // Transition to the content screen
+    $('#menu-screen').removeClass('active');
+    $('#content-screen').addClass('active');
+  });
+
+  // Go back to the menu screen when the back button is clicked
+  $(document).on('click', '.back-button', function () {
+    $('#content-screen').removeClass('active');
+    $('#menu-screen').addClass('active');
+  });
+});
 
 
   // Popular furniture section
